@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">engagement</string>
+
+    <string name="url_websocket">wss://dev-tee-ws.russmedia.com</string>
+    <string name="url_webserver">https://dev-tee.russmedia.com/</string>
+
+    <string name="api_token">693c7b3119db0c32722faa3beddbd0e2fab4c084</string>
+    <string name="client">tee/android (0.0.1)</string>
+
+    <string name="order">order</string>
+
+    <string name="regex_registration">[a-z]://registration-form</string>
+    <string name="regex_article">[a-z]://mobilenews/detail/[0-9]</string>
+
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.russmedia.engagement">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity
+            android:name=".ActivityWebview"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true">
+
+        </activity>
+
+        <activity android:name=".ActivityDialog"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.Dialog" />
+    </application>
+
+</manifest>
