@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="imageview_width">40dp</dimen>
+    <dimen name="imageview_height">40dp</dimen>
+
+    <dimen name="engagement_background_padding_top">3dp</dimen>
+    <dimen name="engagement_background_padding_bottom">3dp</dimen>
+    <dimen name="engagement_background_padding_start">3dp</dimen>
+    <dimen name="engagement_background_padding_end">7dp</dimen>
+
+    <dimen name="engagement_background_corners_radius">20dp</dimen>
+    <dimen name="engagement_background_outline_width">1dp</dimen>
+</resources>

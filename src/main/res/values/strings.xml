@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="rm_ee_url_websocket">wss://tee-ws.russmedia.com</string>
+    <string name="rm_ee_url_websocket_dev">wss://dev-tee-ws.russmedia.com</string>
+
+    <string name="rm_ee_api_token">693c7b3119db0c32722faa3beddbd0e2fab4c084</string>
+    <string name="rm_ee_client">tee/android (0.0.1)</string>
+
+    <string name="rm_ee_order">order</string>
+
+    <string name="rm_ee_regex_registration">[a-z]://registration-form</string>
+    <string name="rm_ee_regex_article">[a-z]://mobilenews/detail/[0-9]</string>
+    <string name="rm_ee_regex_webview">[a-z]://webview/.</string>
+    <string name="rm_ee_regex_tee_webview">[a-z]://tee/webview.</string>
+    <string name="rm_ee_regex_tee_extern">[a-z]://open-link$*</string>
+
+    <string name="rm_ee_thousand_seperator">.</string>
+
+</resources>

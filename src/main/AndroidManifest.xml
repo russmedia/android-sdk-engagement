@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.russmedia.engagement">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true">
+        <activity
+            android:name=".activities.ActivityWebview"
+            android:screenOrientation="portrait"
+            android:excludeFromRecents="false">
+
+        </activity>
+
+        <activity android:name=".activities.ActivityDialog"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"
+            android:theme="@style/popup_rounded" />
+    </application>
+
+</manifest>

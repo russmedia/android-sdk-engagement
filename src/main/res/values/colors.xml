@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="rm_ee_points_color">#000000</color>
+    <color name="rm_ee_navigationbar_color">#ffd200</color>
+
+    <color name="engagement_background_filling">#20000000</color>
+    <color name="engagement_background_outline">#20000000</color>
+</resources>

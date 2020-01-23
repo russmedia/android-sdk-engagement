@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.russmedia.engagement.activities.ActivityWebview">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/navigationBar"
+        android:background="@color/rm_ee_navigationbar_color">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="-5dp"
+            android:src="@drawable/ee_back"
+            android:background="@android:color/transparent"
+            android:onClick="press_back"/>
+
+        <LinearLayout
+            android:id="@+id/ee_wrapper_nav_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/background_rounded"
+            android:gravity="end|center_vertical"
+            android:layout_toStartOf="@id/navbar_menu"
+            android:layout_centerVertical="true"
+            android:minWidth="60dp"
+            android:minHeight="35dp"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/engagement_background_padding_start"
+            android:paddingTop="@dimen/engagement_background_padding_top"
+            android:paddingEnd="@dimen/engagement_background_padding_end"
+            android:paddingBottom="@dimen/engagement_background_padding_bottom" />
+
+        <ImageButton
+            android:id="@+id/navbar_menu"
+            android:layout_width="45dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentEnd="true"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/highres_cancel"
+            android:onClick="close_window"/>
+
+
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/ext_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/navigationBar">
+
+    </WebView>
+
+</RelativeLayout>
