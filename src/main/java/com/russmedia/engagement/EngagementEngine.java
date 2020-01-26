@@ -490,9 +490,17 @@ public class EngagementEngine {
             socket_client.send_message( msg );
         }
     }
+
     public void handlePushRegistration(String pushToken) {
         if (collector_token != null && pushToken != null) {
             String message = "{\"method\":\"registerDevice\",\"collector_token\":\"" + collector_token + "\",\"device_token\":\"" + pushToken + "\",\"platform\":\"android\"}";
+            socket_client.send_message(message);
+        }
+    }
+
+    public void handlePushRegistration(String pushToken, String pushAlias) {
+        if (collector_token != null && pushToken != null) {
+            String message = "{\"method\":\"registerDevice\",\"collector_token\":\"" + collector_token + "\",\"device_token\":\"" + pushToken + "\",\"push_alias\":\"" + pushAlias + "\",\"platform\":\"android\"}";
             socket_client.send_message(message);
         }
     }
