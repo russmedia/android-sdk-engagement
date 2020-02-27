@@ -218,13 +218,16 @@ public class EngagementEngine {
 
             int view_id = view.getId();
 
+            if (!(view.getContext() instanceof ActivityWebview)) { // Disable opening of ActivityWebview when calling from it
 
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    handleDeepLink(null,"");
-                }
-            });
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        handleDeepLink(null, "");
+                    }
+                });
+            }
+
 
             view.setTag(R.string.rm_ee_order, ee_currency_views.size() + 1 );
             ee_currency_views.put(view_id, view );
