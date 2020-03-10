@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.russmedia'
 
 android {
     compileSdkVersion 29
@@ -19,38 +21,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    flavorDimensions "feature", "version"
-    productFlavors {
-        at_vol {
-            dimension "version"
-        }
-        at_vienna {
-            dimension "version"
-        }
-        ch_nzz_fm1 {
-            dimension "version"
-        }
-
-        ch_nzz_radifm1 {
-            dimension "version"
-        }
-
-        ch_nzz_radimelody {
-            dimension "version"
-        }
-
-        de_hna_kassel {
-            dimension "version"
-        }
-
-        commons {
-            dimension "feature"
-        }
-
-        radio {
-            dimension "feature"
-        }
-    }
 }
 
 dependencies {
@@ -60,8 +30,8 @@ dependencies {
     })
 
 
-    //implementation 'com.android.support:appcompat-v7:27.1.1'
-//    implementation 'org.java-websocket:Java-WebSocket:1.3.9'
-    //implementation 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
-    //testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'org.java-websocket:Java-WebSocket:1.3.9'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    testImplementation 'junit:junit:4.12'
 }
