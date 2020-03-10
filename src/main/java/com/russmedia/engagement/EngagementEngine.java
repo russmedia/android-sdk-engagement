@@ -218,13 +218,16 @@ public class EngagementEngine {
 
             int view_id = view.getId();
 
+            if (!(view.getContext() instanceof ActivityWebview)) { // Disable opening of ActivityWebview when calling from it
 
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    handleDeepLink(null,"");
-                }
-            });
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        handleDeepLink(null, "");
+                    }
+                });
+            }
+
 
             view.setTag(R.string.rm_ee_order, ee_currency_views.size() + 1 );
             ee_currency_views.put(view_id, view );
@@ -499,7 +502,7 @@ public class EngagementEngine {
     }
 
     public void handlePushRegistration(String pushToken, String pushAlias) {
-        if (collector_token != null && pushToken != null) {
+        if (collector_token != null && pushToken != null && pushAlias != null) {
             String message = "{\"method\":\"registerDevice\",\"collector_token\":\"" + collector_token + "\",\"device_token\":\"" + pushToken + "\",\"push_alias\":\"" + pushAlias + "\",\"platform\":\"android\"}";
             socket_client.send_message(message);
         }
