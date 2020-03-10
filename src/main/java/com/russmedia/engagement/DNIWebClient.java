@@ -17,8 +17,17 @@ public class DNIWebClient extends WebViewClient {
         this.activity = activity;
     }
 
-    public void onLoadResource(WebView view, String url) {
+    @Override
+    public void doUpdateVisitedHistory(WebView view, String url, boolean isReload) {
+        super.doUpdateVisitedHistory(view, url, isReload);
+        checkForDeepLink(view);
+    }
 
+    public void onLoadResource(WebView view, String url) {
+        checkForDeepLink(view);
+    }
+
+    private void checkForDeepLink(WebView view) {
         String webUrl = view.getUrl();
 
         if (webUrl == null) {
