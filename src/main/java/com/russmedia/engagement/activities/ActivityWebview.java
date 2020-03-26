@@ -60,6 +60,7 @@ public class ActivityWebview extends Activity {
 
         s.setDomStorageEnabled(true);
         s.setDatabaseEnabled(true);
+        s.setMediaPlaybackRequiresUserGesture(false);
 
 
         String path = getCacheDir().getAbsolutePath();
