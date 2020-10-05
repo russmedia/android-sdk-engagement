@@ -249,11 +249,17 @@ public class EngagementEngine {
     }
 
     public void handleDeepLink(String deepLink) {
-        Intent intent = new Intent(act, ActivityWebview.class);
-        Bundle b = new Bundle();
-        b.putString("urlToLoad", deepLink);
-        intent.putExtras(b);
-        act.startActivity(intent);
+        if (user_data != null) {
+            String token = user_data.get_customer_collector_token();
+            if (token != null) {
+                String url = deepLink + (deepLink.contains("?") ? "&" : "?") + "collector_token=" + token;
+                Intent intent = new Intent(act, ActivityWebview.class);
+                Bundle b = new Bundle();
+                b.putString("urlToLoad", url);
+                intent.putExtras(b);
+                act.startActivity(intent);
+            }
+        }
     }
 
     public void handleDeepLink(String entryPoint, String additionalParams) {
