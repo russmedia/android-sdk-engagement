@@ -80,6 +80,15 @@ public class DNIWebClient extends WebViewClient {
             return true;
         }
 
+        if (url != null && url.contains("://")) {
+            String scheme = url.substring(0, url.indexOf("://"));
+            if (EngagementEngine.getInstance().hasUrlScheme(scheme)) {
+                activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                activity.finish();
+                return true;
+            }
+        }
+
         if ( Utils.matches(url, activity.getString(R.string.rm_ee_regex_registration)) || Utils.matches(url, activity.getString(R.string.rm_ee_regex_article)) ) {
             activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
             activity.finish();

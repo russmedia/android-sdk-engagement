@@ -32,6 +32,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class EngagementEngine {
 
@@ -78,6 +79,8 @@ public class EngagementEngine {
 
     private String popupUrl;
     private String lang;
+
+    private LinkedList<String> urlSchemes;
 
     private int displayedPoints = 0;
 
@@ -858,5 +861,18 @@ public class EngagementEngine {
         } else return null;
     }
 
+    public void addUrlScheme(String urlScheme) {
+        if (urlSchemes == null) {
+            urlSchemes = new LinkedList<>();
+        }
+        urlSchemes.add(urlScheme);
+    }
+
+    public boolean hasUrlScheme(String urlScheme) {
+        if (urlSchemes == null) {
+            return false;
+        }
+        return urlSchemes.contains(urlScheme);
+    }
 
 }
