@@ -141,6 +141,60 @@ or if you want to add additional Params:
 EngagementEngine.getInstance().handleDeepLink("/me/rewards", "&param1=one&param2=two");
 ```
 
+This can be done for example with the following code:
+```
+public void handleLink(String url) {
+        //example url = volat://tee/webview?entry=/me/bingo&code=ABC
+
+        //get the entry point for the tee. If the URL doesn't contain one default to /me/open
+        String entry = getUrlParam(url, "entry");
+        if (entry == null || entry.equals("")) {
+            entry = "/me/open";
+        }
+
+        //getUrlCaller extracts the 'tee' (after ://) out of the URL
+        String caller = getUrlCaller(url);
+
+        String additionalParams = "";
+        // add the caller to additional parameters
+        if (caller != null) {
+            additionalParams = "caller=" + caller + "&";
+        }
+        //add all other params from the url to the additional Parameters (except the entry param)
+        additionalParams += getParams(url);
+
+        //call handleDeeplink with the entry point and all params
+        EngagementEngine.getInstance().handleDeepLink(entry, additionalParams);
+    }
+    
+    public static String getUrlParam(String url, String param) {
+        Uri uri=Uri.parse(url);
+        String value = uri.getQueryParameter(param);
+
+        return value;
+    }
+
+    public static String getUrlCaller(String url) {
+        Uri uri=Uri.parse(url);
+        String[] segments = uri.getHost().split("\\.");
+        return segments[0];
+    }
+
+    public static String getParams(String url) {
+        Uri uri=Uri.parse(url);
+        Set<String> params = uri.getQueryParameterNames();
+        String result = "";
+        for (String key : params) {
+            if (!key.equals("entry")) {
+                result += "&" + key + "=" + uri.getQueryParameter(key);
+            }
+        }
+        result = result.replaceFirst("&", "");
+        return result;
+    }
+```
+
+
 The same is for applinks which look like that:
 
 https://yourwebsite/open-gamification/webview?entry=/me/rewards
